@@ -126,7 +126,7 @@ The portfolio uses **EmailJS** for handling contact form submissions without a b
 
 ### Mini Projects
 - **Image Generator SAAS**: AI-powered image generation with Razor Pay integration
-- **Rock Paper Scissors**: Real-time multiplayer game with WebSocket
+- **Rock Paper Scissors**: Real-time multiplayer game.
 - **Tic Tac Toe**: React state management demonstration
 
 ## 🎯 Performance & Optimization
@@ -154,8 +154,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Shashank Umar Vaishy**
-- Email: umarshashank@gmail.com
-- Portfolio: [Live Demo](https://your-portfolio-url.com)
+- Portfolio: [Live Demo]([https://your-portfolio-url.com](https://portfolio-b2c3.vercel.app/))
 - GitHub: [@ShashankUmarVaishy](https://github.com/ShashankUmarVaishy)
 
 ---
