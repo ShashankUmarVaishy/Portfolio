@@ -32,54 +32,11 @@ A modern, interactive portfolio website built with React, Three.js, and Framer M
 - **Modern React**: Built with React 19 and modern hooks
 - **Type Safety**: ESLint configuration for code quality
 
-## 🏗️ Architecture & Design
-
-### Component Structure
-```
-src/
-├── components/
-│   ├── About.jsx          # About section with services
-│   ├── Contact.jsx        # Contact form with EmailJS
-│   ├── Experience.jsx     # Professional timeline
-│   ├── Hero.jsx          # Landing section
-│   ├── Navbar.jsx        # Navigation component
-│   ├── Tech.jsx          # Technology showcase
-│   ├── Works.jsx         # Projects and mini-projects
-│   └── canvas/           # 3D components
-├── constants/
-│   └── index.js          # Data constants
-├── hoc/
-│   └── SectionWrapper.jsx # Higher-order component
-├── utils/
-│   └── motion.js         # Animation variants
-└── styles.js             # Tailwind style configurations
-```
-
-### Design System
-- **Color Palette**: 
-  - Primary: `#915eff` (Purple)
-  - Background: `#050816` (Dark Navy)
-  - Cards: `#151030` (Dark Purple)
-  - Text: `#ffffff` (White), `#aaa6c3` (Light Gray)
-- **Typography**: Clean, modern font hierarchy
-- **Spacing**: Consistent spacing using Tailwind's spacing scale
-- **Animations**: Staggered animations with spring physics
-
 ## 📧 Contact Service Integration
 
 ### EmailJS Configuration
 The portfolio uses **EmailJS** for handling contact form submissions without a backend server.
 
-**Service Details:**
-- **Service ID**: `service_ucx3aew`
-- **Template ID**: `template_e6xgyvm`
-- **Public Key**: `_PHxC0HAAOVTRPANE`
-
-**Features:**
-- Real-time form validation
-- Loading states during submission
-- Success/error feedback
-- Direct email delivery to: `umarshashank@gmail.com`
 
 **Form Fields:**
 - Name (required)
