@@ -67,6 +67,72 @@ const Works = () => {
           />
         ))}
       </div>
+      <motion.div 
+        variants={fadeIn("up", "spring", 0.5, 0.75)}
+        className="mini-projects mt-20"
+      >
+        <motion.div variants={textVariant()}>
+          <h2 className={`${styles.sectionHeadText} mb-8`}>Mini Projects.</h2>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            variants={fadeIn("up", "spring", 0.1, 0.75)}
+            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
+          >
+            <div className="flex items-center mb-4">
+              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
+              <h3 className='text-white text-[20px] font-bold'>Image Generator SAAS</h3>
+            </div>
+            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
+              A comprehensive SAAS application featuring AI-powered image generation with Razor Pay payment gateway integration. 
+              Demonstrates understanding of APIs, payment processing, and subscription models.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#SAAS</span>
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#RazorPay</span>
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#AI</span>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            variants={fadeIn("up", "spring", 0.2, 0.75)}
+            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
+          >
+            <div className="flex items-center mb-4">
+              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
+              <h3 className='text-white text-[20px] font-bold'>Rock Paper Scissors</h3>
+            </div>
+            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
+              Real-time multiplayer game with matchmaking system that connects players with random online opponents. 
+              Features WebSocket integration for live gameplay and user presence management.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#Multiplayer</span>
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#RealTime</span>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            variants={fadeIn("up", "spring", 0.3, 0.75)}
+            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
+          >
+            <div className="flex items-center mb-4">
+              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
+              <h3 className='text-white text-[20px] font-bold'>Tic Tac Toe</h3>
+            </div>
+            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
+              Interactive game built to master React state management concepts. Features game logic implementation, 
+              winner detection, and clean UI design with smooth animations.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#React</span>
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#StateManagement</span>
+              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#GameLogic</span>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </>
   )
 }
