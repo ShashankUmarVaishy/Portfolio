@@ -7,7 +7,7 @@ import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
 //template_2j3fk7m
-//service_ucx3aew
+//service_yntgu95
 //_PHxC0HAAOVTRPANE
 const Contact = () => {
 
@@ -25,13 +25,13 @@ const Contact = () => {
   const handleSubmit=(e)=>{
     e.preventDefault();
     setLoading(true);
-    emailjs.send('service_ucx3aew','template_e6xgyvm',
+    emailjs.send('service_yntgu95','template_e6xgyvm',
       {
         from_name:form.name,
-        to_name:'Shashank Umar Vaishy',
+        to_name:'Shashank Umar Vaishy', 
         from_email:form.email,
         to_email:'umarshashank@gmail.com',
-        message:form.message, 
+        message:form.email + ' \n '+form.message, 
       }
       ,"_PHxC0HAAOVTRPANE").
       then(()=>{
