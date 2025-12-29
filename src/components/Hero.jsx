@@ -1,12 +1,11 @@
 import React from 'react';
-import {easeInOut, motion} from 'framer-motion';
 import {styles} from '../styles';
 import  {ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
     <section className='  relative w-full h-screen mx-auto'>
-      <div className={` px-16  absolute inset-0 top-[120px] w-full max-w-7xl flex flex-row items-start mx-auto  gap-5 `}>
+      <div className={` px-16  absolute inset-0 top-[100px] w-full max-w-7xl flex flex-row items-start mx-auto  gap-5 `}>
         <div className={` flex flex-col justify-center items-center mt-5 `}>
           {/* the purple dot */}
           <div className=' m-7 w-5 h-5 rounded-full bg-[#915eff]' />
@@ -21,24 +20,10 @@ const Hero = () => {
           </div>
       </div>
       </div>
+
+      <div className="h-10"></div>
       <ComputersCanvas  />
-      <div className='absolute xs:bottom-2 bottom-5 w-full flex justify-center items-center ' >
-        <a href="#about"className='cursor-pointer z-20 '>
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-gray-500 flex justify-center items-start p-2 ">
-            <motion.div 
-              animate={{
-                y:[0,40,0]}}
-              transition={{
-                repeat:Infinity,
-                duration:1.5,
-                ease:'easeInOut',
-                repeatType:'loop',
-              }}
-              className='w-3 h-3 bg-[#915eff] rounded-full'
-            />
-          </div>
-        </a>
-      </div>
+      
     </section>
    
   )
