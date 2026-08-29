@@ -58,7 +58,7 @@ const Navbar = () => {
           onClick={() => { setActive(""); window.scrollTo(0, 0); }}
         >
           <p className="text-slate-900 text-[19px] font-extrabold cursor-pointer tracking-tight">
-            Shashank Umar <span className="text-purple-600 font-normal text-[0.85em] ml-1">(शशांक)</span>
+            Shashank
           </p>
         </Link>
 
@@ -74,11 +74,12 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden  flex flex-1 justify-end items-center">
           <img
             src={toggle ? (close?.src || close) : (menu?.src || menu)}
             alt="menu"
-            className="w-[26px] h-[26px] cursor-pointer object-contain"
+            className="w-[26px] h-[26px] bg-purple-600 p-1 rounded
+             cursor-pointer object-contain"
             onClick={() => setToggle(!toggle)}
           />
           <div className={`${!toggle ? 'hidden' : 'flex'} p-6 bg-white border border-slate-200 shadow-xl absolute top-16 right-0 mx-4 my-2 min-w-[160px] z-50 rounded-2xl`}>

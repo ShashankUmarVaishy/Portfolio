@@ -126,11 +126,11 @@ const Contact = () => {
           <p className="text-slate-900 font-extrabold text-lg">Shashank Umar Vaishy</p>
           <p className="text-slate-500 text-sm">NIT Meghalaya · CSE &apos;27</p>
         </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-4">
+        <p className='text-slate-900 font-semibold'>Contact me via my other profiles:</p>
+        <div className="flex flex-wrap gap-4">
           <a
             href="mailto:umarshashank@gmail.com"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
+            className="flex items-center gap-2 px-4 py-2 rounded-sm bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
           >
             <span>umarshashank@gmail.com</span>
           </a>
@@ -138,7 +138,7 @@ const Contact = () => {
             href="https://linkedin.com/in/shashankumarvaishy"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
+            className="flex items-center gap-2 px-4 py-2 rounded-sm bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
           >
             <span>linkedin.com/in/shashankumarvaishy</span>
           </a>
@@ -146,9 +146,17 @@ const Contact = () => {
             href="https://github.com/ShashankUmarVaishy"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
+            className="flex items-center gap-2 px-4 py-2 rounded-sm bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
           >
             <span>github.com/ShashankUmarVaishy</span>
+          </a>
+          <a
+            href="https://leetcode.com/u/umarshashank"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 px-4 py-2 rounded-sm bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 text-sm font-semibold transition-all duration-200"
+          >
+            <span>leetcode.com/u/umarshashank</span>
           </a>
         </div>
       </div>

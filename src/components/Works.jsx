@@ -20,7 +20,10 @@ const ProjectCard = ({
   const imgSrc = image?.src || image;
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.15, 0.75)}
+      variants={fadeIn("up", "spring", (index % 3) * 0.1, 0.75)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }}
       className="h-full"
     >
       <div className="bg-white p-6 rounded-2xl sm:w-[360px] w-full border border-slate-200 shadow-sm hover:shadow-md hover:border-purple-300 transition-all duration-300 flex flex-col justify-between h-full group">
@@ -43,7 +46,7 @@ const ProjectCard = ({
             <div className="absolute inset-0 flex justify-end m-3">
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className="bg-slate-300 hover:bg-purple-400 border border-slate-300 hover:border-purple-600 w-10 h-10 rounded-full justify-center flex items-center cursor-pointer shadow-md transition-all duration-200 group/btn"
+                className="bg-slate-300 hover:bg-purple-600 border border-slate-300 hover:border-purple-600 w-10 h-10 rounded-full justify-center flex items-center cursor-pointer shadow-md transition-all duration-200 group/btn"
                 title="View Repository"
               >
                 <img
