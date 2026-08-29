@@ -1,140 +1,116 @@
+"use client";
+
 import React from 'react';
-import Tilt from 'react-parallax-tilt';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { github } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
-import { fadeIn,textVariant } from '../utils/motion';
+import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard=({index,name, description,tags,image,source_code_link})=>{
-  return(
-    <motion.div variants={fadeIn("up","spring",index*0.5,0.75)} >
-      <Tilt
-        options={{max:45 , scale:1, speed:450}}
-        className='bg-[#151030] p-5 rounded-3xl sm:w-[350px] w-full '
-      >
-        <div className='relative w-full h-[230px]' >
-          <img src={image} alt={name}  className='w-full h-full object-cover rounded-3xl' />
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover ">
-            <div
-              onClick={()=>(
-                window.open(source_code_link,"_blank")
-              )}
-              className="black-gradient w-10 h-10 rounded-full justify-center flex items-center cursor-pointer"
-            >
-              <img src={github} alt="github" 
-                className='w-1/2 h-1/2 object-contain'
+const ProjectCard = ({
+  index,
+  name,
+  subtitle,
+  description,
+  tags,
+  image,
+  source_code_link,
+}) => {
+  const imgSrc = image?.src || image;
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.15, 0.75)}
+      className="h-full"
+    >
+      <div className="bg-white p-6 rounded-2xl sm:w-[360px] w-full border border-slate-200 shadow-sm hover:shadow-md hover:border-purple-300 transition-all duration-300 flex flex-col justify-between h-full group">
+        <div>
+          <div className="relative w-full h-[200px]">
+            {imgSrc ? (
+              <img
+                src={imgSrc}
+                alt={name}
+                className="w-full h-full object-cover rounded-xl border border-slate-100"
               />
+            ) : (
+              <div className="w-full h-full rounded-xl bg-gradient-to-br from-purple-50 via-slate-50 to-purple-100 p-6 flex flex-col justify-center items-center text-center border border-slate-200">
+                <span className="text-3xl mb-2">⚡</span>
+                <h4 className="text-slate-900 text-[18px] font-extrabold">{name}</h4>
+                {subtitle && <p className="text-purple-700 text-[12px] font-semibold mt-1">{subtitle}</p>}
+              </div>
+            )}
+
+            <div className="absolute inset-0 flex justify-end m-3">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="bg-slate-300 hover:bg-purple-400 border border-slate-300 hover:border-purple-600 w-10 h-10 rounded-full justify-center flex items-center cursor-pointer shadow-md transition-all duration-200 group/btn"
+                title="View Repository"
+              >
+                <img
+                  src={github?.src || github}
+                  alt="github"
+                  className="w-5 h-5 object-contain opacity-80 group-hover/btn:opacity-100 group-hover/btn:invert transition-all"
+                />
+              </div>
             </div>
           </div>
+
+          <div className="mt-5">
+            <h3 className="text-slate-900 text-[20px] font-extrabold">{name}</h3>
+            {subtitle && (
+              <p className="text-purple-700 text-[13px] font-semibold mt-0.5">
+                {subtitle}
+              </p>
+            )}
+            <p className="mt-2 text-slate-600 text-[14px] leading-[22px]">
+              {description}
+            </p>
+          </div>
         </div>
-        <div className="mt-5 ">
-          <h3 className='text-white text-[24px] font-bold ' >{name}</h3>
-          <p className='mt-2 text-[#aaa6c3] text-[14px] ' >{description}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag)=>(
-            <p key={tag.name} className={`text-[14px] ${tag.color} `} >#{tag.name}</p>
+
+        <div className="mt-5 flex flex-wrap gap-2 pt-3 border-t border-slate-100">
+          {tags.map((tag) => (
+            <span
+              key={tag.name}
+              className="text-[12px] font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80"
+            >
+              #{tag.name}
+            </span>
           ))}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
-  )
-}
+  );
+};
 
 const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-              <p className={styles.sectionSubText}>My Projects</p>
-              <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <p className={styles.sectionSubText}>My Projects</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
-      <div className="w-full flex ">
+
+      <div className="w-full flex">
         <motion.p
-          variants={fadeIn("","",0.1,1)}
-          className='mt-3 text-gray-400 text-[17px] max-w-3xl leading-[30px] '
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-3 text-slate-600 text-[17px] max-w-3xl leading-[28px]"
         >
-          Following projects showcase my skills and experience through real world examples of my work. Each project is briefly described with links to code repositories and live demos.
+          Key engineering projects showcasing real-world experience in multi-modal AI/RAG systems, IoT communication ecosystems, and enterprise full-stack development.
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7 ">
+
+      <div className="mt-12 flex flex-wrap gap-7 justify-center sm:justify-start">
         {projects.map((project, index) => (
-          <ProjectCard 
+          <ProjectCard
             key={`project-${index}`}
             index={index}
             {...project}
           />
         ))}
       </div>
-      <motion.div 
-        variants={fadeIn("up", "spring", 0.5, 0.75)}
-        className="mini-projects mt-20"
-      >
-        <motion.div variants={textVariant()}>
-          <h2 className={`${styles.sectionHeadText} mb-8`}>Mini Projects.</h2>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <motion.div 
-            variants={fadeIn("up", "spring", 0.1, 0.75)}
-            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
-          >
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
-              <h3 className='text-white text-[20px] font-bold'>Image Generator SAAS</h3>
-            </div>
-            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
-              A comprehensive SAAS application featuring AI-powered image generation with Razor Pay payment gateway integration. 
-              Demonstrates understanding of APIs, payment processing, and subscription models.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#SAAS</span>
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#RazorPay</span>
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#AI</span>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            variants={fadeIn("up", "spring", 0.2, 0.75)}
-            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
-          >
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
-              <h3 className='text-white text-[20px] font-bold'>Rock Paper Scissors</h3>
-            </div>
-            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
-              Real-time multiplayer game with matchmaking system that connects players with random online opponents. 
-              Features WebSocket integration for live gameplay and user presence management.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#Multiplayer</span>
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#RealTime</span>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            variants={fadeIn("up", "spring", 0.3, 0.75)}
-            className="bg-[#151030] p-6 rounded-3xl border border-[#232631] hover:border-[#915eff] transition-all duration-300 group"
-          >
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-[#915eff] rounded-full mr-3"></div>
-              <h3 className='text-white text-[20px] font-bold'>Tic Tac Toe</h3>
-            </div>
-            <p className='text-[#aaa6c3] text-[14px] leading-[22px]'>
-              Interactive game built to master React state management concepts. Features game logic implementation, 
-              winner detection, and clean UI design with smooth animations.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#React</span>
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#StateManagement</span>
-              <span className="text-[12px] bg-[#232631] text-[#915eff] px-3 py-1 rounded-full">#GameLogic</span>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default SectionWrapper(Works,"");
+export default SectionWrapper(Works, "work");
